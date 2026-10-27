@@ -20,6 +20,7 @@ void exploitCode(){
     printf("X**************************X\n");
     printf("X**************************X\n");
     printf("XXXXXXX__exploited__XXXXXXXX\n");
+    exit(0);
 
 } 
 
