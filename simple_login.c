@@ -2,27 +2,46 @@
 #include <string.h>
 
 
-void exploitCode(){
-    printf("XXXXXXX__exploited__XXXXXXXX\n");
-    printf("X**************************X\n");	
-    printf("X**************************X\n");
-    printf("X*****     ______     *****X\n");
-    printf("X****   .-'      `-.   ****X\n");
-    printf("X****  /            \\  ****X\n");
-    printf("X**** |,  .-.  .-.  ,| ****X\n");
-    printf("X**** | )(_o/  \\o_)( | ****X\n");
-    printf("X**** |/     /\\     \\| ****X\n");
-    printf("X**** (_     ^^     _) ****X\n");
-    printf("X****  \\__|IIIIII|__/  ****X\n");
-    printf("X****   | \\IIIIII/ |   ****X\n");
-    printf("X****   \\          /   ****X\n");
-    printf("X*****   `--------`   *****X\n");
-    printf("X**************************X\n");
-    printf("X**************************X\n");
-    printf("XXXXXXX__exploited__XXXXXXXX\n");
-    exit(0);
+void exploitCode(void) {
+    for (int frame = 0; frame < 40; frame++) {
+        /* Clear the screen and move the cursor to the top. */
+        printf("\033[2J\033[H");
 
-} 
+        printf("XXXXXXX__exploited__XXXXXXXX\n");
+        printf("X**************************X\n");
+        printf("X**************************X\n");
+        printf("X*****     ______     *****X\n");
+        printf("X****   .-'      `-.   ****X\n");
+        printf("X****  /            \\  ****X\n");
+        printf("X**** |,  .-.  .-.  ,| ****X\n");
+        printf("X**** | )(_o/  \\o_)( | ****X\n");
+        printf("X**** |/     /\\     \\| ****X\n");
+        printf("X**** (_     ^^     _) ****X\n");
+
+        if (frame % 2 == 0) {
+            /* Open mouth. */
+            printf("X****  \\__|IIIIII|__/  ****X\n");
+            printf("X****   |          |   ****X\n");
+            printf("X****   |  IIIIII  |   ****X\n");
+            printf("X*****   `--------`   *****X\n");
+        } else {
+            /* Closed mouth. */
+            printf("X****  \\__|IIIIII|__/  ****X\n");
+            printf("X****   | \\IIIIII/ |   ****X\n");
+            printf("X****   \\__________/   ****X\n");
+            printf("X*****                *****X\n");
+        }
+
+        printf("X**************************X\n");
+        printf("X**************************X\n");
+        printf("XXXXXXX__exploited__XXXXXXXX\n");
+
+        fflush(stdout);
+        usleep(250000);  /* 250,000 microseconds = 0.25 seconds */
+    }
+
+    exit(0);
+}
 
 
 unsigned long hash_string(const char *str) {
